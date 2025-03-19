@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: user-config
+data:
+  users: |
+    - name: Joseph
+      groups:
+        - developers
+    - name: Rifat
+      groups:
+        - testers
