@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: echo-date-task
+spec:
+  steps:
+    - name: echo-date
+      image: alpine
+      script: |
+        #!/bin/sh
+        echo "Today's date is: $(date)"

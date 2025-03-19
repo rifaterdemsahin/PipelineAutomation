@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: tester-role-binding
+  namespace: default
+subjects:
+  - kind: User
+    name: Rifat
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: tester-role
+  apiGroup: rbac.authorization.k8s.io

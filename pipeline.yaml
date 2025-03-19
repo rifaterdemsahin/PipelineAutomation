@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: echo-date-pipeline
+spec:
+  tasks:
+    - name: echo-date
+      taskRef:
+        name: echo-date-task

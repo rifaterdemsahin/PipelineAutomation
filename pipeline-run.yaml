@@ -1,0 +1,7 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: echo-date-pipeline-run
+spec:
+  pipelineRef:
+    name: echo-date-pipeline
