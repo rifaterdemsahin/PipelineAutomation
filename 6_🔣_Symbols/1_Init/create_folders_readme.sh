@@ -1,3 +1,29 @@
+#!/bin/bash
+# Create folders with README files inside each folder
+# chmod +x ./create_folders_readme.sh;./create_folders_readme.sh
+
+echo "📁 CREATING MAIN FOLDERS AND README FILES"
+
+# Define folder names and their respective README content
+declare -A folders=(
+  ["1_🌍_Real"]="# The Job That Starts with Objective and Key Results\n\n*Sets goals and objectives, aligning tasks with measurable results.*\n\n**Action:** Aim > Goals"
+  ["2_✈️_Journey"]="# Visual Story Explained with Steps\n\n*A self-learning guide from beginner to skilled in visual storytelling.*\n\n**Action:** Feel > Experience"
+  ["3_🌳_Environments"]="# The Roadmap and Use Cases\n\n*A roadmap with learning modules and real-world use cases to apply new skills.*\n\n**Action:** Create > Runtimes"
+  ["4_🌌_Imaginary"]="# What You Learn on the Road\n\n*Tracks concepts, theories, and skills acquired, promoting continuous growth.*\n\n**Action:** Capture > Screenshots"
+  ["5_📐_Formulas"]="# The Guides That Are Mentioned\n\n*Essential guides and formulas for understanding and solving project challenges.*\n\n**Action:** GPT > Learn from it"
+  ["6_🔣_Symbols"]="# Code That Is Implemented\n\n*Includes code snippets and examples to demonstrate each concept practically.*\n\n**Action:** Execute > Code"
+  ["7_🌀_Semblance"]="# Errors Found in the Process\n\n*Documents mistakes and solutions, making errors valuable learning opportunities.*\n\n**Action:** Fix > Errors"
+)
+
+# Create folders and add README.md to each with formatted content
+for folder in "${!folders[@]}"; do
+  mkdir -p "$folder"  # Create the folder
+  echo -e "${folders[$folder]}" > "$folder/README.md"  # Create README.md with formatted content
+  echo "✅ Created $folder with README.md"
+done
+
+# Create the main README.md file
+cat > README.md << 'EOF'
 # Self Learning Project Template
 ## Goal : Fill the skills gaps by self learning while leveraging technology
 
@@ -54,3 +80,16 @@
 
 ## 🔧 PromptFixer:
 - Act as a prompt engineer, review the prompt and ask your questions, write a better version of the prompt
+EOF
+
+echo "✅ Created main README.md"
+
+# Create the initialization folder for symbols
+mkdir -p "6_🔣_Symbols/1_Init"
+echo "✅ Created 6_🔣_Symbols/1_Init directory"
+
+# Move this script to the symbols/init folder
+cp "$0" "6_🔣_Symbols/1_Init/"
+echo "✅ Copied script to 6_🔣_Symbols/1_Init/"
+
+echo "🎉 Folder structure created successfully with README.md files!"
