@@ -1,0 +1,12 @@
+{
+  "name": "QEMU Dev Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "runArgs": [
+    "--memory=8g",
+    "--cpus=4"
+  ],
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager"
+}
