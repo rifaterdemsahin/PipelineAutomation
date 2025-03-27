@@ -7,7 +7,7 @@ echo "📁 CREATING MAIN FOLDERS AND README FILES"
 # Define folder names and their respective README content
 declare -A folders=(
   ["1_🌍_Real"]="# The Job That Starts with Objective and Key Results\n\n*Sets goals and objectives, aligning tasks with measurable results.*\n\n**Action:** Aim > Goals"
-  ["2_✈️_Journey"]="# Visual Story Explained with Steps\n\n*A self-learning guide from beginner to skilled in visual storytelling.*\n\n**Action:** Feel > Experience"
+  ["2_✈️_Journey"]="# Visual Story Explained with Steps\n\n*A self-learning guide from beginner to skilled in visual and linear storytelling.*\n\n**Action:** Feel > Experience"
   ["3_🌳_Environments"]="# The Roadmap and Use Cases\n\n*A roadmap with learning modules and real-world use cases to apply new skills.*\n\n**Action:** Create > Runtimes"
   ["4_🌌_Imaginary"]="# What You Learn on the Road\n\n*Tracks concepts, theories, and skills acquired, promoting continuous growth.*\n\n**Action:** Capture > Screenshots"
   ["5_📐_Formulas"]="# The Guides That Are Mentioned\n\n*Essential guides and formulas for understanding and solving project challenges.*\n\n**Action:** GPT > Learn from it"
