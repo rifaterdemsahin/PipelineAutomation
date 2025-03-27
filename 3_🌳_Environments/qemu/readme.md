@@ -133,3 +133,52 @@ drwxrwxrwx+ 3 1000    0       4096 Mar 27 16:01 ..
 -rw-rw-rw-  1 1000 1000  724434944 Nov  4 02:10 virtio-win.iso
 -rw-rw-rw-  1 1000 1000      58783 Mar 27 16:05 wget-log
 @rifaterdemsahin ➜ /workspaces/PipelineAutomation/3_🌳_Environments/qemu (main) $ 
+
+
+qemu-system-x86_64 -enable-kvm -m 4096 -cpu host -smp 2 \
+  -drive file=/workspaces/PipelineAutomation/6_🔣_Symbols/4_ActiveDirectory/windows-server.qcow2,format=qcow2 \
+  -cdrom /workspaces/PipelineAutomation/6_🔣_Symbols/4_ActiveDirectory/windows-server.iso \
+  -drive file=/workspaces/PipelineAutomation/6_🔣_Symbols/4_ActiveDirectory/virtio-win.iso,media=cdrom \
+  -net nic -net user,hostfwd=tcp::3389-:3389
+
+  ---
+
+  It looks like the paths in your `qemu-system-x86_64` command need to be updated to match the actual file locations in your workspace. Based on the `ls` output, here is the corrected command:
+
+
+
+This command should now correctly reference the files in your `qemu` directory. If you encounter any issues or need further assistance, feel free to ask!
+
+
+sudo apt update
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager
+
+qemu-img create -f qcow2 windows-server.qcow2 40G
+
+
+```sh
+qemu-system-x86_64 -enable-kvm -m 4096 -cpu host -smp 2 \
+  -drive file=/workspaces/PipelineAutomation/3_🌳_Environments/qemu/windows-server.qcow2,format=qcow2 \
+  -cdrom /workspaces/PipelineAutomation/3_🌳_Environments/qemu/26100.1742.240906-0331.ge_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso \
+  -drive file=/workspaces/PipelineAutomation/3_🌳_Environments/qemu/virtio-win.iso,media=cdrom \
+  -net nic -net user,hostfwd=tcp::3389-:3389
+```
+
+
+nstall Windows Server
+Follow the installation steps for Windows Server. During installation, load the VirtIO drivers to ensure proper disk and network functionality1.
+
+5. Configure Active Directory
+Once Windows Server is installed, configure Active Directory:
+
+Install AD DS Role:
+Open Server Manager, go to "Add roles and features," and install the Active Directory Domain Services (AD DS) role.
+Promote Server to Domain Controller:
+After installing AD DS, promote the server to a domain controller by following the wizard steps in Server Manager.
+6. Network Configuration
+Ensure your VM is properly networked to communicate with other machines. You may need to configure DHCP and DNS services on your domain controller1.
+
+7. Access and Manage AD
+You can access your Active Directory setup via Remote Desktop (RDP) using the forwarded port (3389):
+
+rdesktop localhost:3389
