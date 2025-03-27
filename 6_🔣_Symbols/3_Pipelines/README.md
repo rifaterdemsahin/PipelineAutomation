@@ -6,7 +6,12 @@
 
 2. Apply the YAML configurations in the `tekton` directory:
    ```sh
-   kubectl apply -f tekton/
+   kubectl apply -f task.yaml
+   kubectl apply -f pipeline.yaml
+   kubectl apply -f pipeline-run.yaml
+   
+   kubectl apply -f tester-role-binding.yaml
+   kubectl apply -f tester-role.yaml
    ```
 
 
@@ -21,5 +26,4 @@ role.rbac.authorization.k8s.io/tester-role unchanged
 ---
 
 tkn pipelinerun logs echo-date-pipeline-run -f
-
 kubectl logs -l app=tekton-pipelines-controller -n tekton-pipelines
