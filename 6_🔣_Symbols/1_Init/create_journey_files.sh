@@ -21,7 +21,16 @@ echo "- Use emojis" >> 2.2.1_commands.md
 
 # 🎨 Journey diagram
 touch 2.3.1_journey.drawio
-echo "# 🎨 Journey diagram" >> 2.3.1_journey.drawio
+echo '<mxfile host="app.diagrams.net">
+  <diagram name="Page-1">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" shadow="0" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" sketch="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>' > 2.3.1_journey.drawio
 
 # ✅ To-do list
 touch 2.4.1_todos.md
