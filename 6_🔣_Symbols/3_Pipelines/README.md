@@ -20,3 +20,6 @@ role.rbac.authorization.k8s.io/tester-role unchanged
 
 ---
 
+tkn pipelinerun logs echo-date-pipeline-run -f
+
+kubectl logs -l app=tekton-pipelines-controller -n tekton-pipelines

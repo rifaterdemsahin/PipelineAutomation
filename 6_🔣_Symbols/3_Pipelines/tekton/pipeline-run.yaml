@@ -5,3 +5,4 @@ metadata:
 spec:
   pipelineRef:
     name: echo-date-pipeline
+  serviceAccountName: default
