@@ -4,6 +4,10 @@
 
 **Action:** Execute > Code
 
+```bash
+tkn pipeline delete --all && tkn pipelinerun delete --all && tkn task delete --all && tkn taskrun delete --all
+```
+
 2. Apply the YAML configurations in the `tekton` directory:
    ```sh
    kubectl apply -f task.yaml
