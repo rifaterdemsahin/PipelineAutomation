@@ -1,0 +1,2 @@
+FROM --platform=windows mcr.microsoft.com/windows/servercore:ltsc2019
+RUN Install-WindowsFeature AD-Domain-Services
