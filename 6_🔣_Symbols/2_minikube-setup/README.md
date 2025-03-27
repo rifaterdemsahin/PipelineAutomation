@@ -28,6 +28,18 @@ To set up the Minikube environment, follow these steps:
    kubectl apply -f kubernetes/
    ```
 
+
+@rifaterdemsahin ➜ /workspaces/PipelineAutomation/6_🔣_Symbols/2_minikube-setup (main) $  
+  kubectl apply -f kubernetes/
+rolebinding.rbac.authorization.k8s.io/developer-role-binding created
+role.rbac.authorization.k8s.io/developer-role created
+secret/automation-sa-secret created
+serviceaccount/automation-sa created
+rolebinding.rbac.authorization.k8s.io/tester-role-binding created
+role.rbac.authorization.k8s.io/tester-role created
+configmap/user-config created
+@rifaterdemsahin ➜ /workspaces/PipelineAutomation/6_🔣_Symbols/2_minikube-setup (main) $ 
+
 This will create the necessary ServiceAccount, Secret, ConfigMap, Roles, and RoleBindings in your Minikube environment.
 
 ## Usage
