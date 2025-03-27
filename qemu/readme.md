@@ -158,9 +158,9 @@ qemu-img create -f qcow2 windows-server.qcow2 40G
 
 ```sh
 qemu-system-x86_64 -enable-kvm -m 4096 -cpu host -smp 2 \
-  -drive file=/workspaces/PipelineAutomation/3_🌳_Environments/qemu/windows-server.qcow2,format=qcow2 \
-  -cdrom /workspaces/PipelineAutomation/3_🌳_Environments/qemu/26100.1742.240906-0331.ge_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso \
-  -drive file=/workspaces/PipelineAutomation/3_🌳_Environments/qemu/virtio-win.iso,media=cdrom \
+  -drive file=/workspaces/PipelineAutomation/qemu/windows-server.qcow2,format=qcow2 \
+  -cdrom /workspaces/PipelineAutomation/qemu/26100.1742.240906-0331.ge_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso \
+  -drive file=/workspaces/PipelineAutomation/qemu/virtio-win.iso,media=cdrom \
   -net nic -net user,hostfwd=tcp::3389-:3389 \
   -nographic
 ```
